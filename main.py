@@ -2,8 +2,7 @@
 import os
 from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
-import os, uuid
-from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, __version__
+from azure.storage.blob import BlobServiceClient, __version__
 from dotenv import load_dotenv
 
 load_dotenv(".env")
@@ -64,6 +63,6 @@ def upload_file():
     
 if __name__ == "__main__":
     app.secret_key= os.urandom(16)
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8000,debug=True)
     
     
