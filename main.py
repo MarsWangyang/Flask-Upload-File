@@ -6,7 +6,7 @@ from azure.storage.blob import BlobServiceClient, __version__
 from dotenv import load_dotenv
 
 load_dotenv(".env")
-UPLOAD_FOLDER = os.getcwd() + "/cache"
+UPLOAD_FOLDER = os.getcwd() + os.path.join("/cache")
 ALLOWED_EXTENSIONS = {'txt'}
 
 app = Flask(__name__)
